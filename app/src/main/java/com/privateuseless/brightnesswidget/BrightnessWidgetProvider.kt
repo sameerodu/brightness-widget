@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings
 import android.widget.RemoteViews
 
 class BrightnessWidgetProvider : AppWidgetProvider() {
@@ -44,9 +45,35 @@ class BrightnessWidgetProvider : AppWidgetProvider() {
             )
 
             if (brightness >= 0) {
-                // Brightness control will be added in the next step.
+                setScreenBrightness(
+                    context,
+                    brightness
+                )
             }
         }
+    }
+
+    private fun setScreenBrightness(
+        context: Context,
+        brightnessPercent: Int
+    ) {
+        if (!Settings.System.canWrite(context)) {
+            return
+        }
+
+        val brightnessValue = when {
+            brightnessPercent <= 0 -> 1
+            brightnessPercent >= 100 -> 255
+            else -> {
+                (brightnessPercent * 255) / 100
+            }
+        }
+
+        Settings.System.putInt(
+            context.contentResolver,
+            Settings.System.SCREEN_BRIGHTNESS,
+            brightnessValue
+        )
     }
 
     private fun updateWidget(
