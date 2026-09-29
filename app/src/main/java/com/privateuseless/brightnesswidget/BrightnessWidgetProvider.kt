@@ -3,6 +3,7 @@ package com.privateuseless.brightnesswidget
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.widget.RemoteViews
 
 class BrightnessWidgetProvider : AppWidgetProvider() {
 
@@ -12,9 +13,14 @@ class BrightnessWidgetProvider : AppWidgetProvider() {
         appWidgetIds: IntArray
     ) {
         for (appWidgetId in appWidgetIds) {
+            val views = RemoteViews(
+                context.packageName,
+                R.layout.brightness_widget
+            )
+
             appWidgetManager.updateAppWidget(
                 appWidgetId,
-                null
+                views
             )
         }
     }
