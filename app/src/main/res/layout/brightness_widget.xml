@@ -9,4 +9,49 @@
     android:paddingStart="8dp"
     android:paddingEnd="8dp">
 
+    <ImageView
+        android:id="@+id/brightness_0"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_margin="4dp"
+        android:src="@drawable/brightness_0"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/brightness_35"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_margin="4dp"
+        android:src="@drawable/brightness_35"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/brightness_50"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_margin="4dp"
+        android:src="@drawable/brightness_50"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/brightness_65"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_margin="4dp"
+        android:src="@drawable/brightness_65"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/brightness_100"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_margin="4dp"
+        android:src="@drawable/brightness_100"
+        android:contentDescription="@null" />
+
 </LinearLayout>
